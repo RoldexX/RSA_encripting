@@ -10,6 +10,12 @@
     <height>300</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>450</width>
+    <height>0</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>RSA_Encryption</string>
   </property>
@@ -25,7 +31,14 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_OpenKey"/>
+       <widget class="QLineEdit" name="lineEdit_OpenKey_d">
+        <property name="styleSheet">
+         <string notr="true">text-align: center;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_OpenKey_n"/>
       </item>
       <item>
        <widget class="QLabel" name="label_2">
@@ -35,7 +48,10 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_CloseKey"/>
+       <widget class="QLineEdit" name="lineEdit_CloseKey_e"/>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_CloseKey_n"/>
       </item>
      </layout>
     </item>
