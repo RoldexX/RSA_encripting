@@ -103,7 +103,13 @@ class RSA_Encripting(QtWidgets.QMainWindow):
         if check(open_key[0]):
             return self.ui.statusbar.showMessage("Ошибка открытого ключа...")
 
-        return self.ui.statusbar.showMessage("Ошибок нет")
+        massage = self.ui.textEdit_Massage.toPlainText()
+        encmassage = ''
+
+        for i in massage:
+            encmassage += chr((ord(i)**open_key[0]) % open_key[1])
+
+        return self.ui.textEdit_Massage.setPlainText(encmassage)
 
     def Decryption(self):
         try:
@@ -114,7 +120,13 @@ class RSA_Encripting(QtWidgets.QMainWindow):
         if check(close_key[0]):
             return self.ui.statusbar.showMessage("Ошибка закрытого ключа...")
 
-        return self.ui.statusbar.showMessage("Ошибок нет")
+        massage = self.ui.textEdit_Massage.toPlainText()
+        encmassage = ''
+
+        for i in massage:
+            encmassage += chr((ord(i) ** close_key[0]) % close_key[1])
+
+        return self.ui.textEdit_Massage.setPlainText(encmassage)
 
 
 app = QtWidgets.QApplication([])
