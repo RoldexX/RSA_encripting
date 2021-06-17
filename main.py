@@ -78,21 +78,16 @@ class RSA_Encripting(QtWidgets.QMainWindow):
 
             for i in prime_numbs[2]:
                 e = i
-                print(e)
                 if ((e * d) % nfoc) == 1:
-                    print("---------------")
                     break
 
             if ((e * d) % nfoc) == 1:
                 f = False
 
-
-        print(p, q)
         self.ui.lineEdit_OpenKey_d.setText(str(d))
         self.ui.lineEdit_OpenKey_n.setText(str(n))
         self.ui.lineEdit_CloseKey_e.setText(str(e))
         self.ui.lineEdit_CloseKey_n.setText(str(n))
-
 
     def Encryption(self):
         try:
